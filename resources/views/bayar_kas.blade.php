@@ -74,12 +74,12 @@
                         <label class="field-label">Upload Bukti Transfer / Foto</label>
                         <div class="upload-area" id="uploadArea">
                             <input type="file" name="proof_image" id="proofFile"
-                                   accept="image/jpg,image/jpeg,image/png,image/webp" required
+                                   accept="image/jpg,image/jpeg,image/png,image/webp"
                                    class="upload-input" onchange="previewImage(this)">
                             <div class="upload-placeholder" id="uploadPlaceholder">
                                 <div class="upload-icon">📎</div>
-                                <div class="upload-text">Klik atau seret foto bukti transfer di sini</div>
-                                <div class="upload-hint">JPG, PNG, WEBP — Maks 3MB</div>
+                                <div class="upload-text">Klik atau seret foto bukti transfer di sini (Opsional)</div>
+                                <div class="upload-hint">Tidak wajib jika sudah transfer via QRIS</div>
                             </div>
                             <img id="previewImg" src="" alt="" style="display:none;width:100%;border-radius:8px;max-height:200px;object-fit:contain;">
                         </div>

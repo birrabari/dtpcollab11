@@ -5,7 +5,7 @@
     <section class="club-hero">
         <div class="club-hero-inner">
             <div class="club-hero-text">
-                <span class="club-badge">🏀 Ekskul Resmi Sekolah</span>
+                <span class="club-badge">Ekskul Resmi Sekolah</span>
                 <h1 class="club-title">Basket<br><span class="text-accent">SMA Telkom</span></h1>
                 <p class="club-desc">Ekskul basket yang membentuk atlet berprestasi, berkarakter, dan berjiwa sportivitas tinggi. Bergabunglah dan raih potensi terbaikmu bersama kami.</p>
                 <div class="club-hero-actions">
