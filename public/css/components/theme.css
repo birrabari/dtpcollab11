@@ -1,0 +1,38 @@
+/* resources/css/components/theme.css */
+
+:root, html[data-theme="dark"] {
+    /* DEFAULT DARK THEME */
+    --color-bg-base: #000000;
+    --color-bg-surface: #0a0a0a;
+    --color-bg-elevated: #111111;
+    --color-text-main: #ffffff;
+    --color-text-muted: #888888;
+    --color-border: #222222;
+    --color-accent: #ff2a00;
+    --color-accent-hover: #e02400;
+    
+    --transition-cinematic: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    --transition-fast: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* LIGHT THEME VARIABLES */
+html[data-theme="light"] {
+    --color-bg-base: #f4f4f5;
+    --color-bg-surface: #ffffff;
+    --color-bg-elevated: #ffffff;
+    --color-text-main: #000000;
+    --color-text-muted: #6b7280;
+    --color-border: #e5e7eb;
+    --color-accent: #e62600;
+    --color-accent-hover: #cc2200;
+}
+
+body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+a {
+    transition: color var(--transition-fast);
+}

@@ -1,0 +1,143 @@
+@import 'tailwindcss';
+
+@theme {
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-display: 'Inter', system-ui, sans-serif;
+}
+
+:root {
+    --transition-cinematic: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    --transition-fast: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.text-muted { color: var(--color-text-muted); }
+.text-accent { color: var(--color-accent); }
+.font-display { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.04em; }
+
+.btn-cinematic {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-text-main);
+    color: var(--color-bg-base);
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 100px;
+    transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-cinematic:hover {
+    transform: scale(1.05);
+}
+
+html[data-theme="light"] .btn-cinematic {
+    background: #000;
+    color: #fff;
+}
+html[data-theme="light"] .btn-cinematic:hover { background: #333; }
+
+.btn-cinematic-accent {
+    background: var(--color-accent) !important;
+    color: white !important;
+}
+.btn-cinematic-accent:hover {
+    background: var(--color-accent-hover) !important;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border);
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 100px;
+    transition: all var(--transition-fast);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-text-main);
+}
+
+/* Floating Top Bar for Mobile/Collapsed Sidebar */
+.floating-header {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 60;
+    display: flex;
+    gap: 16px;
+}
+
+.icon-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all var(--transition-fast);
+}
+
+.icon-btn:hover {
+    background: var(--color-bg-elevated);
+    border-color: var(--color-text-muted);
+}
+
+/* Page eyebrow (shared) */
+.page-eyebrow {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 12px;
+}
+
+/* Global Description Thickening */
+p, .text-muted, .club-desc, .bayar-subtitle, .anggota-subtitle, .info-text p, .payment-instructions, .history-note {
+    font-weight: 600;
+}

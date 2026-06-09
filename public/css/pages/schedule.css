@@ -1,0 +1,108 @@
+/* Cinematic Schedule Styles */
+.page-header {
+    padding: 200px 48px 80px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.page-header h1 {
+    font-size: clamp(48px, 6vw, 80px);
+    margin-bottom: 24px;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.schedule-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 48px;
+}
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-row {
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    gap: 40px;
+    align-items: center;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: background var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.schedule-row:hover {
+    background: var(--color-bg-elevated);
+    padding-left: 24px;
+}
+
+.sched-date {
+    font-family: var(--font-display);
+}
+
+.sched-day {
+    font-size: 40px;
+    color: var(--color-text-main);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.sched-month {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.sched-details h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.sched-meta {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.sched-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sched-status {
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.sched-status.active {
+    border-color: #10b981;
+    color: #10b981;
+}
+
+@media (max-width: 768px) {
+    .schedule-row {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 32px 0;
+    }
+    .sched-day { font-size: 32px; }
+    .schedule-row:hover { padding-left: 0; background: transparent; }
+}

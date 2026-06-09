@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal Ekskul - Platform terpadu untuk mengelola aktivitas ekstrakurikuler dengan sistem modern">
+    <meta name="theme-color" content="#FF6B35">
+    <title>Portal Ekskul - Masuk ke Sistem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card" role="main" aria-label="Form Masuk Portal Ekskul">
+            <div class="login-header">
+                <h1 aria-level="1">Portal Ekskul</h1>
+                <p>Platform profesional untuk mengelola kegiatan ekskul Anda</p>
+            </div>
+            <form id="loginForm" aria-label="Formulir login dengan username dan password">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        placeholder="Masukkan username" 
+                        required
+                        aria-required="true"
+                        aria-label="Input username"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="Masukkan password" 
+                        required
+                        aria-required="true"
+                        aria-label="Input password"
+                    >
+                </div>
+                <button type="submit" class="btn-primary">Masuk ke Sistem</button>
+            </form>
+            <p style="margin-top: 1.5rem; font-size: 13px; color: var(--text-tertiary);">
+                Demo: gunakan <strong>admin</strong> / <strong>password</strong>
+            </p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

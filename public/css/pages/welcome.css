@@ -1,0 +1,349 @@
+/* ================================
+   WELCOME / HOME PAGE CSS
+   ================================ */
+
+.home-wrapper {
+    min-height: 100vh;
+}
+
+/* --- HERO --- */
+.club-hero {
+    padding: 120px 48px 80px;
+    background: radial-gradient(ellipse at top right, var(--color-bg-elevated) 0%, var(--color-bg-base) 70%);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.club-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.club-badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    padding: 6px 16px;
+    border: 1px solid var(--color-accent);
+    border-radius: 100px;
+}
+
+.club-title {
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+}
+
+.club-desc {
+    font-size: 17px;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 520px;
+}
+
+.club-hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-primary-home {
+    display: inline-flex;
+    align-items: center;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 100px;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+}
+
+.btn-primary-home:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(230, 38, 0, 0.3);
+}
+
+.btn-outline-home {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    color: var(--color-text-main);
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 100px;
+    border: 1.5px solid var(--color-border);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+}
+
+.btn-outline-home:hover {
+    border-color: var(--color-text-main);
+}
+
+.club-hero-photo {
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.15);
+}
+
+/* --- STATS --- */
+.home-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.hstat-card {
+    padding: 48px 32px;
+    text-align: center;
+    border-right: 1px solid var(--color-border);
+    transition: background var(--transition-fast);
+}
+
+.hstat-card:last-child { border-right: none; }
+
+.hstat-card:hover {
+    background: var(--color-bg-elevated);
+}
+
+.hstat-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.hstat-val {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--color-text-main);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.03em;
+}
+
+.hstat-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* --- INFO --- */
+.home-info {
+    padding: 100px 48px;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-base);
+}
+
+.info-block {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.info-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+}
+
+.info-text h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.info-text p {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-list li {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+.info-photo img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+}
+
+/* --- JADWAL --- */
+.home-schedule {
+    padding: 80px 48px;
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.home-schedule-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-schedule-inner h2,
+.home-prestasi-inner h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    letter-spacing: -0.02em;
+}
+
+.schedule-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.sched-card {
+    background: var(--color-bg-base);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all var(--transition-fast);
+}
+
+.sched-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+
+.sched-day-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--color-text-main);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.sched-time {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+}
+
+.sched-loc {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+}
+
+.sched-type {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.sched-type.latihan  { background: rgba(16,185,129,0.12); color: #10b981; }
+.sched-type.teknik   { background: rgba(59,130,246,0.12); color: #3b82f6; }
+.sched-type.tanding  { background: rgba(230,38,0,0.12);   color: var(--color-accent); }
+
+/* --- PRESTASI --- */
+.home-prestasi {
+    padding: 80px 48px;
+    background: var(--color-bg-base);
+}
+
+.home-prestasi-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.prestasi-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.prestasi-card {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: padding-left var(--transition-fast), background var(--transition-fast);
+}
+
+.prestasi-card:hover {
+    padding-left: 16px;
+    background: var(--color-bg-elevated);
+}
+
+.prestasi-year {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-accent);
+    min-width: 80px;
+    letter-spacing: -0.02em;
+}
+
+.prestasi-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    flex: 1;
+}
+
+.prestasi-org {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .club-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-img { height: 280px; }
+    .home-stats { grid-template-columns: repeat(2, 1fr); }
+    .hstat-card { border-bottom: 1px solid var(--color-border); }
+    .info-block { grid-template-columns: 1fr; gap: 40px; }
+    .schedule-cards { grid-template-columns: 1fr; }
+    .prestasi-card { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .club-hero, .home-info, .home-schedule, .home-prestasi { padding: 60px 24px; }
+}

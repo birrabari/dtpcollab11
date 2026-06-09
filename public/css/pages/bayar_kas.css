@@ -1,0 +1,318 @@
+/* ================================
+   BAYAR KAS PAGE CSS
+   ================================ */
+.bayar-wrapper { min-height: 100vh; }
+
+.bayar-hero {
+    padding: 80px 48px 60px;
+    background: radial-gradient(ellipse at top left, var(--color-bg-elevated) 0%, var(--color-bg-base) 70%);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.bayar-hero-inner { max-width: 1200px; margin: 0 auto; }
+
+.page-eyebrow {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 12px;
+}
+
+.bayar-title {
+    font-size: clamp(36px, 5vw, 60px);
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+}
+
+.bayar-subtitle {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* Layout */
+.bayar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 48px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* Form Card */
+.form-card, .history-card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 36px;
+    margin-bottom: 24px;
+}
+
+.form-card-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Alerts */
+.alert-success {
+    background: rgba(16,185,129,0.1);
+    color: #10b981;
+    border: 1px solid rgba(16,185,129,0.3);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.alert-error-box {
+    background: rgba(244,63,94,0.08);
+    color: #f43f5e;
+    border: 1px solid rgba(244,63,94,0.25);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+/* Form Fields */
+.bayar-form { display: flex; flex-direction: column; gap: 24px; }
+
+.field-group { display: flex; flex-direction: column; gap: 8px; }
+
+.field-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.field-input {
+    width: 100%;
+    background: var(--color-bg-base);
+    border: 1.5px solid var(--color-border);
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-size: 15px;
+    font-family: var(--font-sans);
+    color: var(--color-text-main);
+    transition: border-color var(--transition-fast);
+    outline: none;
+}
+
+.field-input:focus {
+    border-color: var(--color-accent);
+    background: var(--color-bg-surface);
+}
+
+/* Method Toggle */
+.method-toggle {
+    display: flex;
+    gap: 12px;
+}
+
+.method-opt { cursor: pointer; }
+
+.method-opt input[type="radio"] { display: none; }
+
+.method-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: 1.5px solid var(--color-border);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.method-opt input[type="radio"]:checked + .method-btn {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(230,38,0,0.06);
+}
+
+/* Upload Area */
+.upload-area {
+    position: relative;
+    border: 2px dashed var(--color-border);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    transition: border-color var(--transition-fast);
+    cursor: pointer;
+    background: var(--color-bg-base);
+}
+
+.upload-area:hover { border-color: var(--color-accent); }
+
+.upload-input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.upload-icon { font-size: 32px; margin-bottom: 12px; }
+
+.upload-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 6px;
+}
+
+.upload-hint { font-size: 13px; color: var(--color-text-muted); }
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    letter-spacing: 0.02em;
+}
+
+.btn-submit:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(230,38,0,0.3);
+}
+
+/* QRIS Card */
+.qris-card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+}
+
+.qris-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+}
+
+.qris-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.qris-name {
+    font-size: 13px;
+    font-weight: 800;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+.qris-box img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.qris-hint {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+/* History */
+.history-card h2 { font-size: 22px; }
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.history-item:last-child { border-bottom: none; }
+
+.history-desc {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 4px;
+}
+
+.history-meta {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+}
+
+.history-note {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+.history-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.history-amount {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--color-text-main);
+    white-space: nowrap;
+}
+
+.history-status {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.status-pending  { background: rgba(234,179,8,0.12);   color: #ca8a04; }
+.status-approved { background: rgba(16,185,129,0.12);  color: #10b981; }
+.status-rejected { background: rgba(244,63,94,0.12);   color: #f43f5e; }
+
+.empty-state { text-align: center; padding: 48px 0; color: var(--color-text-muted); }
+.empty-icon  { font-size: 40px; margin-bottom: 12px; }
+
+@media (max-width: 1024px) {
+    .bayar-hero, .bayar-content { padding: 48px 24px; }
+    .bayar-content { grid-template-columns: 1fr; }
+    .method-toggle { flex-wrap: wrap; }
+}
