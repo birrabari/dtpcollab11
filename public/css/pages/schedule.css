@@ -106,3 +106,43 @@
     .sched-day { font-size: 32px; }
     .schedule-row:hover { padding-left: 0; background: transparent; }
 }
+
+.btn-toggle-holiday {
+    padding: 8px 16px;
+    background: transparent;
+    color: #ef4444;
+    border: 1px solid #ef4444;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.btn-toggle-holiday:hover {
+    background: #ef4444;
+    color: white;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.btn-toggle-active {
+    padding: 8px 16px;
+    background: transparent;
+    color: #10b981;
+    border: 1px solid #10b981;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.btn-toggle-active:hover {
+    background: #10b981;
+    color: white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}

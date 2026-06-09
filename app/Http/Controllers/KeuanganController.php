@@ -9,10 +9,11 @@ class KeuanganController extends Controller
     public function index()
     {
         $transactions = Transaction::latest('date')->get();
+        $qrisPayments = \App\Models\CashPayment::with('user')->where('payment_method', 'qris')->latest('date')->get();
         $totalIn      = Transaction::where('type', 'in')->sum('amount');
         $totalOut     = Transaction::where('type', 'out')->sum('amount');
         $saldo        = $totalIn - $totalOut;
 
-        return view('keuangan', compact('transactions', 'totalIn', 'totalOut', 'saldo'));
+        return view('keuangan', compact('transactions', 'qrisPayments', 'totalIn', 'totalOut', 'saldo'));
     }
 }

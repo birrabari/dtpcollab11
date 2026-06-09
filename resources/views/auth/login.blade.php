@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - ekskul kuu</title>
+    <title>Login - Basketin</title>
     
     <!-- Cinematic Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 
     <div class="auth-wrapper">
         <div class="auth-container">
-            <h1 class="auth-brand">ekskul kuu.</h1>
+            <h1 class="auth-brand">Basketin.</h1>
             <p class="auth-subtitle">Masuk untuk mengelola tim basket Anda.</p>
 
             <form action="{{ route('login') }}" method="POST" class="auth-form">

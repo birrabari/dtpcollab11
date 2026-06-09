@@ -11,13 +11,16 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, \Laravel\Sanctum\HasApiTokens;
 
     protected $fillable = [
         'name',
         'email',
         'password',
         'is_admin',
+        'kelas',
+        'posisi',
+        'no_punggung',
     ];
 
     protected $hidden = [

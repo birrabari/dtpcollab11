@@ -1,4 +1,4 @@
-<x-layout title="Bayar Kas — Ekskul Basket" cssFile="bayar_kas">
+<x-layout title="Bayar Kas — Basketin" cssFile="bayar_kas">
 <div class="bayar-wrapper">
 
     {{-- HEADER --}}
@@ -50,19 +50,7 @@
                                value="{{ old('description') }}" required>
                     </div>
 
-                    <div class="field-group">
-                        <label class="field-label">Metode Pembayaran</label>
-                        <div class="method-toggle">
-                            <label class="method-opt">
-                                <input type="radio" name="payment_method" value="qris" checked>
-                                <span class="method-btn">📱 QRIS</span>
-                            </label>
-                            <label class="method-opt">
-                                <input type="radio" name="payment_method" value="cash">
-                                <span class="method-btn">💵 Tunai (Cash)</span>
-                            </label>
-                        </div>
-                    </div>
+                    <input type="hidden" name="payment_method" value="qris">
 
                     <div class="field-group">
                         <label class="field-label">Tanggal Pembayaran</label>
@@ -95,8 +83,8 @@
             <div class="qris-card">
                 <h3>Bayar via QRIS</h3>
                 <div class="qris-box">
-                    <p class="qris-name">EKSKUL BASKET SMA HUB</p>
-                    <img src="{{ asset('images/qris.png') }}" alt="QRIS Ekskul Basket">
+                    <p class="qris-name">BASKETIN</p>
+                    <img src="{{ asset('images/qris.jpeg') }}" alt="QRIS Basketin">
                 </div>
                 <p class="qris-hint">Scan dengan GoPay, OVO, Dana, ShopeePay, atau Mobile Banking apapun.</p>
             </div>

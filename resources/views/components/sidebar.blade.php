@@ -1,7 +1,7 @@
 <aside class="sidebar">
     <div class="brand">
         <div class="brand-icon"></div>
-        <span class="brand-text">ekskul kuu</span>
+        <span class="brand-text">Basketin</span>
     </div>
 
     <ul class="nav-menu">
@@ -41,6 +41,35 @@
                 <span>Profil</span>
             </a>
         </li>
+        @if(auth()->check() && auth()->user()->is_admin)
+        <li style="margin-top: 16px; padding: 0 20px;">
+            <span style="font-size: 11px; font-weight: 700; color: #6b7280; letter-spacing: 0.05em; text-transform: uppercase;">Admin</span>
+        </li>
+        <li>
+            <a href="/admin" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>Kelola Pembayaran</span>
+            </a>
+        </li>
+        <li>
+            <a href="/admin/users" class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>Kelola Anggota</span>
+            </a>
+        </li>
+        <li>
+            <a href="/admin/schedules" class="nav-link {{ request()->is('admin/schedules') ? 'active' : '' }}">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>Kelola Jadwal</span>
+            </a>
+        </li>
+        <li>
+            <a href="/admin/achievements" class="nav-link {{ request()->is('admin/achievements') ? 'active' : '' }}">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15c-3.3 0-6-2.7-6-6v-3h12v3c0 3.3-2.7 6-6 6Z"></path><path d="M9 15v3H6v2h12v-2h-3v-3"></path></svg>
+                <span>Kelola Prestasi</span>
+            </a>
+        </li>
+        @endif
     </ul>
 
     <div class="sidebar-footer">

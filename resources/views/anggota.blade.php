@@ -1,4 +1,4 @@
-<x-layout title="Daftar Anggota — Ekskul Basket" cssFile="anggota">
+<x-layout title="Daftar Anggota — Basketin" cssFile="anggota">
 <div class="anggota-wrapper">
 
     {{-- HEADER --}}
@@ -7,7 +7,7 @@
             <span class="page-eyebrow">👥 Komunitas Tim</span>
             <h1 class="anggota-title">Daftar Anggota</h1>
             <p class="anggota-subtitle">
-                {{ $totalAnggota }} anggota aktif terdaftar dalam sistem Ekskul Basket SMA Hub.
+                {{ $totalAnggota }} anggota aktif terdaftar dalam sistem Basketin.
             </p>
         </div>
         <div class="anggota-hero-stat">
@@ -23,7 +23,7 @@
             <div class="empty-state">
                 <div class="empty-icon">👤</div>
                 <h3>Belum Ada Anggota</h3>
-                <p>Ajak teman-teman untuk bergabung ke ekskul basket!</p>
+                <p>Ajak teman-teman untuk bergabung ke Basketin!</p>
                 @guest
                     <a href="/register" class="btn-primary-home" style="margin-top:20px;display:inline-flex;">Daftar Sekarang</a>
                 @endguest
@@ -40,11 +40,17 @@
                     <div class="member-avatar">
                         {{ strtoupper(substr($member->name, 0, 1)) }}
                     </div>
-                    <div class="member-number">#{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                    <div class="member-number">#{{ $member->no_punggung ? str_pad($member->no_punggung, 2, '0', STR_PAD_LEFT) : '??' }}</div>
                     <div class="member-info">
                         <div class="member-name">{{ $member->name }}</div>
-                        <div class="member-email">{{ $member->email }}</div>
-                        <div class="member-joined">
+                        <div class="member-stats" style="font-size:13px; color:var(--text-secondary); margin-top:4px;">
+                            @if($member->kelas) <strong>Kelas:</strong> {{ $member->kelas }} &nbsp; @endif
+                            @if($member->posisi) <strong>Posisi:</strong> {{ $member->posisi }} @endif
+                            @if(!$member->kelas && !$member->posisi)
+                                <span class="text-muted">Profil Belum Lengkap</span>
+                            @endif
+                        </div>
+                        <div class="member-joined" style="font-size:12px; margin-top:8px; opacity:0.7;">
                             Bergabung {{ $member->created_at->translatedFormat('d M Y') ?? $member->created_at->format('d M Y') }}
                         </div>
                     </div>

@@ -222,6 +222,7 @@
     padding: 20px;
     margin-bottom: 16px;
     border: 1px solid #e5e7eb;
+    overflow: hidden;
 }
 
 .qris-name {
@@ -234,9 +235,11 @@
 }
 
 .qris-box img {
-    width: 160px;
-    height: 160px;
-    object-fit: contain;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.35); /* Zoom in to hide surroundings */
     display: block;
     margin: 0 auto;
 }

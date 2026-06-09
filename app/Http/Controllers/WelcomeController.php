@@ -13,7 +13,9 @@ class WelcomeController extends Controller
         $totalIn      = Transaction::where('type', 'in')->sum('amount');
         $totalOut     = Transaction::where('type', 'out')->sum('amount');
         $saldo        = $totalIn - $totalOut;
+        $events       = \App\Models\Event::orderBy('event_date', 'asc')->get();
+        $achievements = \App\Models\Achievement::orderBy('year', 'desc')->get();
 
-        return view('welcome', compact('totalAnggota', 'saldo'));
+        return view('welcome', compact('totalAnggota', 'saldo', 'events', 'achievements'));
     }
 }

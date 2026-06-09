@@ -1,4 +1,4 @@
-@props(['title' => 'ekskul kuu', 'cssFile' => ''])
+@props(['title' => 'Basketin', 'cssFile' => ''])
 
 <!DOCTYPE html>
 <html lang="id" data-theme="light">

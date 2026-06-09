@@ -1,4 +1,4 @@
-<x-layout title="Laporan Keuangan — Ekskul Basket" cssFile="keuangan">
+<x-layout title="Laporan Keuangan — Basketin" cssFile="keuangan">
 <div class="finance-wrapper">
 
     {{-- HEADER --}}
@@ -31,14 +31,14 @@
         {{-- TRANSAKSI TABLE --}}
         <div class="finance-section">
             <div class="section-header">
-                <h2>Riwayat Transaksi Kas</h2>
-                <span class="section-badge">{{ $transactions->count() }} transaksi</span>
+                <h2>Riwayat Transaksi QRIS</h2>
+                <span class="section-badge">{{ $qrisPayments->count() }} transaksi</span>
             </div>
 
-            @if($transactions->isEmpty())
+            @if($qrisPayments->isEmpty())
                 <div class="empty-state">
                     <div class="empty-icon">📭</div>
-                    <p>Belum ada data transaksi.</p>
+                    <p>Belum ada data transaksi QRIS.</p>
                 </div>
             @else
             <div class="trx-table-wrap">
@@ -46,23 +46,29 @@
                     <thead>
                         <tr>
                             <th>Tanggal</th>
+                            <th>Nama Anggota</th>
                             <th>Keterangan</th>
-                            <th>Jenis</th>
+                            <th>Status</th>
                             <th style="text-align:right">Nominal</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($transactions as $trx)
+                        @foreach($qrisPayments as $trx)
                         <tr>
-                            <td class="trx-date">{{ $trx->date->format('d M Y') }}</td>
+                            <td class="trx-date">{{ \Carbon\Carbon::parse($trx->date)->format('d M Y') }}</td>
+                            <td><strong>{{ $trx->user->name }}</strong></td>
                             <td class="trx-desc">{{ $trx->description }}</td>
                             <td>
-                                <span class="trx-badge {{ $trx->type === 'in' ? 'badge-in' : 'badge-out' }}">
-                                    {{ $trx->type === 'in' ? '▲ Masuk' : '▼ Keluar' }}
-                                </span>
+                                @if($trx->status === 'approved')
+                                    <span class="trx-badge badge-in">Disetujui</span>
+                                @elseif($trx->status === 'pending')
+                                    <span class="trx-badge" style="background:#fef08a; color:#854d0e;">Menunggu</span>
+                                @else
+                                    <span class="trx-badge badge-out">Ditolak</span>
+                                @endif
                             </td>
-                            <td class="trx-amount {{ $trx->type === 'in' ? 'amount-in' : 'amount-out' }}">
-                                {{ $trx->type === 'in' ? '+' : '-' }} Rp {{ number_format($trx->amount, 0, ',', '.') }}
+                            <td class="trx-amount amount-in">
+                                Rp {{ number_format($trx->amount, 0, ',', '.') }}
                             </td>
                         </tr>
                         @endforeach
